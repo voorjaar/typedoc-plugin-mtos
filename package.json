@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-mtos",
-  "version": "0.1.0",
+  "version": "0.7.0",
   "description": "A plugin for TypeDoc that turns your typedoc into a single page application.",
   "type": "module",
   "main": "dist/index.js",
@@ -47,7 +47,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.1",
     "@types/node": "^18.11.9",
-    "mtos": "0.1.0",
+    "mtos": "0.7.0",
     "rollup": "^3.2.5",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
