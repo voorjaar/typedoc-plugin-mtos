@@ -1,6 +1,6 @@
 import { Application, PageEvent, ParameterType, RendererEvent } from "typedoc";
+import { join, relative } from "path";
 
-import { join } from "path";
 import { writeFileSync } from "fs";
 
 export const pluginOptions = (app: Application) => ({
@@ -14,7 +14,7 @@ export const pluginOptions = (app: Application) => ({
 export type PluginOptionsGetter = ReturnType<typeof pluginOptions>;
 export type PluginOptions = ReturnType<PluginOptionsGetter["options"]>;
 
-function injectMtoS(content: string, link = "../assets/mtos.js") {
+function injectMtoS(content: string, link: string) {
   const script = `<script src="${link}"></script>`;
   return content.replace(/(?=<\/head>)/, script);
 }
@@ -23,7 +23,8 @@ function onPageRendered(this: PluginOptionsGetter, page: PageEvent) {
   const options = this.options();
 
   if (!page.contents) return;
-  page.contents = injectMtoS(page.contents, options.cdnLink || (options.cdn ? __mtosCDN__ : undefined) );
+
+  page.contents = injectMtoS(page.contents, options.cdnLink || (options.cdn ? __mtosCDN__ : `${relative(page.url, "assets").slice(3)}/mtos.js`) );
 }
 
 function onRenderFinished(this: PluginOptionsGetter) {
