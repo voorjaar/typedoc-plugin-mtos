@@ -1,14 +1,16 @@
 # typedoc-plugin-mtos
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that turns your typedoc into a single page application. Checkout [this page](https://voorjaar.github.io/typedoc-plugin-mtos/) for a preview demo.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that turns your typedoc into a single page application.
+
+> Checkout [this page](https://voorjaar.github.io/typedoc-plugin-mtos/) for a preview demo.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-mtos.svg)](https://www.npmjs.com/package/typedoc-plugin-mtos)
 
 ## What it does?
 
-The plugin add [mtos](https://github.com/voorjaar/mtos) to your docs. You can confgure a CDN or serve static script.
+The plugin add [mtos](https://github.com/voorjaar/mtos) to your docs head. You can confgure to use a CDN or serve static script.
 
-You still serve the static html files, but the user experience is the same as SPA witth incremental requests via fetch on the client side. And you can also add transition animations, progress bar, etc.
+You still serve the static html files, but the user experience is the same as SPA with incremental requests via fetch API on the client side. And you can also add transition animations, progress bar, etc.
 
 ## Installation
 
@@ -152,7 +154,7 @@ Then we can load the animation and progress:
 typedoc --plugin typedoc-plugin-mtos --customCss assets/custom.css --customJs assets/custom.js --out docs src/index.ts
 ```
 
-> The above steps are just examples, you can define your own animation and progress bar as needed.
+**Note**: The above steps are just examples, you can define your own animation and progress bar as needed.
 
 ## License
 
