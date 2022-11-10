@@ -1,6 +1,7 @@
-import { Application, ParameterType, PageEvent, RendererEvent } from "typedoc";
-import { writeFileSync } from "fs";
+import { Application, PageEvent, ParameterType, RendererEvent } from "typedoc";
+
 import { join } from "path";
+import { writeFileSync } from "fs";
 
 export const pluginOptions = (app: Application) => ({
   options: () => ({
@@ -13,14 +14,16 @@ export const pluginOptions = (app: Application) => ({
 export type PluginOptionsGetter = ReturnType<typeof pluginOptions>;
 export type PluginOptions = ReturnType<PluginOptionsGetter["options"]>;
 
-function injectMtoS(content: string) {
-  const script = `<script src="../assets/mtos.js"></script>`;
+function injectMtoS(content: string, link = "../assets/mtos.js") {
+  const script = `<script src="${link}"></script>`;
   return content.replace(/(?=<\/head>)/, script);
 }
 
 function onPageRendered(this: PluginOptionsGetter, page: PageEvent) {
+  const options = this.options();
+
   if (!page.contents) return;
-  page.contents = injectMtoS(page.contents);
+  page.contents = injectMtoS(page.contents, options.cdnLink || (options.cdn ? __mtosCDN__ : undefined) );
 }
 
 function onRenderFinished(this: PluginOptionsGetter) {
@@ -33,7 +36,7 @@ function onRenderFinished(this: PluginOptionsGetter) {
 
   writeFileSync(
     join(workingDir, outDir, "assets", "mtos.js"),
-    "console.log(123)"
+    __mtos__,
   );
 }
 
