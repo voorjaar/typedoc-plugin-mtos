@@ -1,21 +1,14 @@
-import { readFileSync, writeFileSync } from "fs";
-
 import commonjs from "@rollup/plugin-commonjs";
 import { defineConfig } from "rollup";
 import del from "rollup-plugin-delete";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import { readFileSync } from "fs";
 import replace from "@rollup/plugin-replace";
 import typescript from "rollup-plugin-typescript2";
 
 /** @type { version: string } */
 const mtosPkg = JSON.parse(readFileSync("./node_modules/mtos/package.json").toString());
 const mtosSrc = readFileSync("./node_modules/mtos/dist/mtos-iife.min.js").toString();
-
-/** @type { version: string } */
-const pkg = JSON.parse(readFileSync("./package.json"));
-pkg.version = mtosPkg.version;
-
-writeFileSync("./package.json", JSON.stringify(pkg, undefined, 2) + "\n")
 
 export default defineConfig({
   input: "src/index.ts",
