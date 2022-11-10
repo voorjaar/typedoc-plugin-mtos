@@ -15,7 +15,7 @@ const mtosSrc = readFileSync("./node_modules/mtos/dist/mtos-iife.min.js").toStri
 const pkg = JSON.parse(readFileSync("./package.json"));
 pkg.version = mtosPkg.version;
 
-writeFileSync("./package.json", JSON.stringify(pkg) + "\n")
+writeFileSync("./package.json", JSON.stringify(pkg, undefined, 2) + "\n")
 
 export default defineConfig({
   input: "src/index.ts",
