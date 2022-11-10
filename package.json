@@ -1,10 +1,14 @@
 {
   "name": "typedoc-plugin-mtos",
   "version": "0.1.0",
-  "description": "",
+  "description": "Turn your typedoc into a single page application",
   "type": "module",
   "main": "dist/index.js",
-  "exports": "./dist/index.js",
+  "homepage": "https://github.com/voorjaar/typedoc-plugin-mtos",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
   "types": "dist/index.d.ts",
   "files": [
     "dist/"
@@ -14,11 +18,29 @@
     "test": "typedoc --plugin . src/index.ts",
     "build": "rollup -c"
   },
-  "keywords": [],
+  "keywords": [
+    "mtos",
+    "spa",
+    "mpa",
+    "typedoc",
+    "plugin",
+    "typedoc-plugin",
+    "typedocplugin"
+  ],
   "author": "Raven Satir",
   "license": "MIT",
   "peerDependencies": {
     "typedoc": "0.23.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voorjaar/typedoc-plugin-mtos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voorjaar/typedoc-plugin-mtos/issues"
+  },
+  "engines": {
+    "node": ">= 14.14"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^23.0.2",
