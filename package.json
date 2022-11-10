@@ -1,8 +1,7 @@
 {
   "name": "typedoc-plugin-mtos",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A plugin for TypeDoc that turns your typedoc into a single page application.",
-  "type": "module",
   "main": "dist/index.js",
   "homepage": "https://github.com/voorjaar/typedoc-plugin-mtos",
   "exports": {
@@ -14,9 +13,9 @@
     "dist/"
   ],
   "scripts": {
-    "dev": "rollup -cw",
+    "dev": "rollup -cw --bundleConfigAsCjs",
     "test": "typedoc --plugin . src/index.ts",
-    "build": "rollup -c"
+    "build": "rollup -c --bundleConfigAsCjs"
   },
   "keywords": [
     "mtos",
