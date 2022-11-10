@@ -1,6 +1,6 @@
 # typedoc-plugin-mtos
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that turns your typedoc into a single page application.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that turns your typedoc into a single page application. Checkout [this page](https://voorjaar.github.io/typedoc-plugin-mtos/) for a preview demo.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-mtos.svg)](https://www.npmjs.com/package/typedoc-plugin-mtos)
 
