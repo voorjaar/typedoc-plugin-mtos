@@ -5,7 +5,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^15.0.1
   '@rollup/plugin-replace': ^5.0.1
   '@types/node': ^18.11.9
-  mtos: 0.7.0
+  mtos: 0.7.2
   rollup: ^3.2.5
   rollup-plugin-delete: ^2.0.0
   rollup-plugin-typescript2: ^0.34.1
@@ -17,7 +17,7 @@ devDependencies:
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.2.5
   '@rollup/plugin-replace': 5.0.1_rollup@3.2.5
   '@types/node': 18.11.9
-  mtos: 0.7.0
+  mtos: 0.7.2
   rollup: 3.2.5
   rollup-plugin-delete: 2.0.0
   rollup-plugin-typescript2: 0.34.1_oa2candk7eitu7usnsurwiyuuu
@@ -495,8 +495,8 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
-  /mtos/0.7.0:
-    resolution: {integrity: sha512-z9cAdAePo9n/BBO8EeTi7nmHt1N+0eKFmmUwHimXmHy4mY+BBURWLSTUMqadFzEmxr+PgThBhOM2wAilxm4awQ==}
+  /mtos/0.7.2:
+    resolution: {integrity: sha512-2I5nAb3TEVROF1oSTiwIqE2ib6RiT99oVOXz+SJD0+90HeGfSzx7SOu3zdYQBlr6lt33jBDCDKXWFGiUG486Ug==}
     dev: true
 
   /once/1.4.0:
